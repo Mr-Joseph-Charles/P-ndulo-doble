@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+
+	<title>Péndulo doble</title>
+</head>
+<body>
+	<div class="buttons">
+		<button class="pauseplay_btn"><img id="pauseplay_img" src="pause.png" alt=""></button>
+        <button class="restart_btn"><img id="restart_img" src="restart.png" alt=""></button>
+		<!-- <button class="config_btn"><img id="config_img" src="config.png" alt=""></button>
+		<button class="addcanvas_btn"><img id="addcanvas_img" src="plus.png" alt=""></button> -->
+	</div>
+	<div id="main"> <!--class="hidden"-->
+	<div class="config_banner">
+		<h3>Configuración</h3>
+		<button class="apply_btn">Aplicar</button>
+		<!-- <button class="exitconfig_btn"><img id="exitconfig_img" src="x.png" alt=""></button> -->
+	</div>
+	<button class="collapsible inactive" id="firstcoll"> Longitudes [m] </button>
+		<div class="content">
+			<!-- <div class="pends">
+				<span>Pendulum 1</span>
+				<span class="secondo">Pendulum 2</span>
+			</div> -->
+			<div class="sliders">
+				<div id="r1_value">50</div>
+				<input type="range" id="r1_slider" value="125" min="5" max="150">
+				<div id="r2_value" class="secondo">50</div>
+				<input type="range" id="r2_slider" class="secondo" value="125" min="5" max="150">
+			</div>
+			<div class="literallysomespace"></div>		
+		</div>
+
+	<button class="collapsible inactive inactive"> Masas [kg] </button>
+		<div class="content">
+
+			<div class="sliders">
+				<div id="m1_value">50</div>
+			<input type="range" id="m1_slider" value="10" min="1" max="100">
+
+			<div id="m2_value" class="secondo">50</div>
+			<input type="range" id="m2_slider" class="secondo" value="10" min="1" max="100">
+			</div>
+			<div class="literallysomespace"></div>		
+		</div>
+	
+	<button class="collapsible inactive"> Ángulos iniciales [°]<h6>(en sentido antihorario)</h6></button>
+		<div class="content">
+			<div class="sliders">
+			<div id="a1_value">50</div>
+			<input type="range" id="a1_slider" value="0" min="0" max="360">
+
+			<div id="a2_value" class="secondo">50</div>
+			<input type="range" id="a2_slider" class="secondo" value="0" min="0" max="360">
+			</div>
+			<div class="literallysomespace"></div>		
+		</div>
+	
+	<button class="collapsible inactive"> Velocidades angulares iniciales <h6>(negativo = rotación horaria)</h6></button>
+		<div class="content" id="firstcontent">
+			<div class="sliders">
+				<div id="a1_v_value">50</div>
+			<input type="range" id="a1_v_slider" value="0" min="-10" max="10" step="0.1">
+
+			<div id="a2_v_value" class="secondo">50</div>
+			<input type="range" id="a2_v_slider" class="secondo" value="0" min="-10" max="10" step="0.1">
+			</div>
+			<div class="literallysomespace"></div>		
+		</div>
+	
+	<button class="collapsible inactive" id="lastcoll"> Fuerzas externas </button>
+		<div class="content">
+			<div class="sliders">
+				<h4>Gravedad <h5 id="gravitag" class="hidden">(negativo es antigravedad)</h5></h4>
+				<div id="g_value">50</div>
+				<input type="range" id="g_slider" value="1" min="-10" max="10" step="0.1">
+				
+				<h4>Resistencia</h4>
+				<div id="resistance_value" class="secondo">50</div>
+				<input type="range" id="resistance_slider" class="secondo" value="0" min="0" max="1" step="0.001">				
+			</div>
+			<div class="literallysomespace"></div>
+		</div>
+	</div>
+	<div class="track">
+		<input type="checkbox" id="track">
+		<h2>Mostrar estela</h2>
+	</div>
+	<!-- Por alguna razón colocar este daña el botón de exitconfig -->
+	<!-- <div id="secondo"></div> -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+Inspiraciones
+
+Daniel Shiffman: https://github.com/CodingTrain/Coding-Challenges/tree/main/093_DoublePendulum/P5
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_symbol
+https://codepen.io/ShadowShahriar/pen/zYPPYrQ
+-->
